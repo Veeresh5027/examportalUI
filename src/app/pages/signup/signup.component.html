@@ -1,48 +1,54 @@
 <div class="bootstrap-wrapper">
     <div class="container">
-        <div class="row" style="margin-top: 20px;">
+        <!-- Using the .mt20 utility class defined in your styles.css for consistency -->
+        <div class="row">
             <div class="col-md-6 offset-md-3">
-                <div class="container text-center">
-                    <img src="assets/resgister user.jpg" alt="Registration Image" class="app-icon-image">
-                </div>
-                <h3 class="text-center">Register Here</h3>
-                <form (ngSubmit)="formSubmit()">
-                    <!--User name field-->
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Username</mat-label>
-                        <input required [(ngModel)]="user.username" name="username" matInput placeholder="Enter Username">
-                        <mat-hint>Username should be unique</mat-hint>
-                    </mat-form-field>
-                    <!--Password field-->
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input required [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Enter Password">
-                    </mat-form-field>
-                     <!--First Name field-->
-                     <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>First Name</mat-label>
-                        <input required [(ngModel)]="user.firstName" name="firstName" matInput placeholder="Enter First Name">
-                    </mat-form-field>
-                     <!--Last Name field-->
-                     <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Last Name</mat-label>
-                        <input required [(ngModel)]="user.lastName" name="lastName" matInput placeholder="Enter Last Name">
-                    </mat-form-field>
-                     <!--Email field-->
-                     <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input required [(ngModel)]="user.email" name="email" matInput placeholder="Enter Email">
-                    </mat-form-field>
-                     <!--Phone field-->
-                     <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Phone</mat-label>
-                        <input required [(ngModel)]="user.phone" name="phone" matInput placeholder="Enter Phone">
-                    </mat-form-field>
+                <mat-card>
+                    <!-- Removed one redundant <div class="container text-center"> -->
                     <div class="container text-center">
-                        <button type="submit" mat-raised-button color="primary">Register</button>
-                        <button style="margin-left: 20px;" mat-raised-button color="accent">Reset</button>
+                        <!-- RECOMMENDATION: Rename your image file to avoid spaces (e.g., register-user.jpg) -->
+                        <!-- If renamed to register-user.jpg, the src would be: -->
+                        <img src="assets/resgister user.jpg" alt="Registration Image" class="app-icon-image">
                     </div>
-                </form>
+                    <h3 class="text-center">Register Here</h3>
+                    <form (ngSubmit)="formSubmit()">
+                        <!-- User name field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input required [(ngModel)]="user.username" name="username" matInput placeholder="Enter Username">
+                            <mat-hint>Username should be unique</mat-hint>
+                        </mat-form-field>
+                        <!-- Password field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input required [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Enter Password">
+                        </mat-form-field>
+                        <!-- First Name field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input required [(ngModel)]="user.firstName" name="firstName" matInput placeholder="Enter First Name">
+                        </mat-form-field>
+                        <!-- Last Name field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input required [(ngModel)]="user.lastName" name="lastName" matInput placeholder="Enter Last Name">
+                        </mat-form-field>
+                        <!-- Email field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input required [(ngModel)]="user.email" name="email" matInput placeholder="Enter Email">
+                        </mat-form-field>
+                        <!-- Phone field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Phone</mat-label>
+                            <input required [(ngModel)]="user.phone" name="phone" matInput placeholder="Enter Phone">
+                        </mat-form-field>
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary">Register</button>
+                            <button style="margin-left: 20px;" mat-raised-button color="accent">Reset</button>
+                        </div>
+                    </form>
+                </mat-card>
             </div>
         </div>
     </div>

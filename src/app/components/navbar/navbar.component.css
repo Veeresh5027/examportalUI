@@ -1,0 +1,31 @@
+ /* src/app/components/navbar/navbar.component.css */
+
+    /* Add a class to your mat-toolbar in HTML (e.g., <mat-toolbar class="my-navbar" ...>)
+       Then, you can scope your CSS more specifically to avoid affecting other toolbars. */
+    .my-navbar button.mat-icon-button {
+        background: transparent !important;
+        padding: 0;
+        color: inherit; /* Should inherit from mat-toolbar's primary color */
+    }
+
+    .my-navbar .mat-mdc-button-persistent-ripple::before {
+        background-color: transparent !important;
+        opacity: 0 !important;
+    }
+
+    /* Optional: Subtle ripple on hover/focus */
+    .my-navbar button.mat-icon-button:hover .mat-mdc-button-persistent-ripple::before,
+    .my-navbar button.mat-icon-button:focus .mat-mdc-button-persistent-ripple::before {
+        background-color: currentColor !important;
+        opacity: 0.1;
+    }
+
+    .my-navbar mat-icon {
+        color: inherit;
+    }
+
+    /* Ensure example-spacer is defined here if you remove it from src/styles.css */
+    .example-spacer {
+        flex: 1 1 auto;
+    }
+    

@@ -1,0 +1,47 @@
+<mat-card *ngIf="user">
+    <h3>Your Profile Details</h3>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container text-center">
+                <div class="container">
+                    <img src="https://www.shutterstock.com/image-vector/user-profile-icon-vector-avatar-600nw-2247726673.jpg" alt=""
+                        class="profile-image">
+                        <h3>{{user.firstName}} {{user.lastName}}</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!-- table details -->
+                         <table class="table text-center">
+                            <tr>
+                                <td>username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>userId</td>
+                                <td>EXAM{{user.id}}</td>
+                            </tr>
+                            <tr>
+                                <td>phone</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled?'Active':'Inactive'}}</td>
+                            </tr>
+                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="container text-center">
+            <button mat-raised-button color="primary">Update</button>
+            <button style="margin-left: 20px;" mat-raised-button color="accent">Share</button>
+        </div>
+    </mat-card-actions>
+</mat-card>
