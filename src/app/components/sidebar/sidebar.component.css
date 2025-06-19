@@ -1,0 +1,17 @@
+.custom-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+}
+
+.custom-list-item mat-icon {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.custom-list-item span {
+  font-size: 14px;
+  margin-left: 10px;
+  vertical-align: middle;
+}

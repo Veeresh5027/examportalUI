@@ -43,11 +43,42 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 /* --- Global Styling for Icon Images --- */
 .app-icon-image {
-    width: 100px;  /* Set your desired width */
-    height: 100px; /* Set your desired height */
+    width: 50px;  /* Set your desired width */
+    height: 50px; /* Set your desired height */
     object-fit: contain; /* Ensures the whole image is visible within the bounds */
     display: block;      /* Makes it a block element to control margin-auto for centering */
     margin: 0 auto 10px auto; /* Centers the image horizontally and adds some bottom margin */
     border-radius: 8px; /* Optional: adds rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+/* --- Specific Fix for mat-icon-button in mat-toolbar --- */
+
+/* This targets the actual button element directly within a mat-toolbar.
+   It ensures no default background or extra padding */
+mat-toolbar button.mat-icon-button {
+    background: transparent !important; /* Important: Force transparency */
+    padding: 0;                        /* Remove any extra padding */
+    color: inherit;                    /* Ensure icon color inherits from toolbar text */
+}
+
+/* This is *CRUCIAL* for addressing the default white/grey background on hover/focus/ripple.
+   It targets the internal pseudo-element that creates the visual "state layer" */
+mat-toolbar .mat-mdc-button-persistent-ripple::before {
+    background-color: transparent !important; /* Force this layer to be transparent */
+    opacity: 0 !important;                    /* Hide it completely by default */
+}
+
+/* Optional: If you still want a *subtle* ripple on hover/focus,
+   you can adjust the opacity for active states. */
+mat-toolbar button.mat-icon-button:hover .mat-mdc-button-persistent-ripple::before,
+mat-toolbar button.mat-icon-button:focus .mat-mdc-button-persistent-ripple::before {
+    background-color: currentColor !important; /* Use the current text color for the ripple */
+    opacity: 0.1;                              /* Make it very subtle */
+}
+
+
+/* Ensure the icon color itself is also inherited */
+mat-toolbar mat-icon {
+    color: inherit;
 }

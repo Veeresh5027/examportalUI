@@ -1,66 +1,70 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baseUrl from './helper';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http:HttpClient) {
+  public loginStatusSubject = new BehaviorSubject<boolean>(this.isLogin());
 
-   }
-   //generate token
-   generateToken(loginData:any){
-     return this.http.post(`${baseUrl}/generate-token`,loginData);
-   }
+  constructor(private http: HttpClient) {}
 
-   //login user set token in local storage
-   loginUser(token:any){
-     localStorage.setItem('token',token);
-     return true;
-   }
+  // Get current user
+  public getCurrentUser() {
+    return this.http.get(`${baseUrl}/current-user`);
+  }
 
-   //isLogin
-   isLogin(){
-     if(localStorage.getItem('token') == undefined || localStorage.getItem('token') == '' || localStorage.getItem('token') == null){
-       return false;
-     }else{
-       return true;
-     }
-   }
+  // Generate token
+  generateToken(loginData: any) {
+    return this.http.post(`${baseUrl}/generate-token`, loginData);
+  }
 
-   //logout
-   logout(){
-     localStorage.removeItem('token');
-     localStorage.removeItem('user');
-     return true;
-   }
+  // Login user: set token in local storage
+  loginUser(token: any) {
+    localStorage.setItem('token', token);
+    this.loginStatusSubject.next(true); // Notify all components
+    return true;
+  }
 
-   //get token
-   getToken(){
-     return localStorage.getItem('token');
-   }
+  // Is user logged in
+  isLogin(): boolean {
+    const token = localStorage.getItem('token');
+    return token !== undefined && token !== '' && token !== null;
+  }
 
-   //set user details
-   setUser(user:any){
-     localStorage.setItem('user',JSON.stringify(user));
-   }
+  // Logout user
+  logout(): boolean {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.loginStatusSubject.next(false); // Notify all components
+    return true;
+  }
 
-   //get user details
-   getUser(){
-     let userStr = localStorage.getItem('user');
-     if(userStr != null){
-       return JSON.parse(userStr);
-     }else{
-       this.logout();
-       return null;
-     }
-   }  
+  // Get token
+  getToken() {
+    return localStorage.getItem('token');
+  }
 
-   //get user role
-   getUserRole(){
-     let user = this.getUser();
-     return user.authorities[0].authority;
-   }
+  // Set user
+  setUser(user: any) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  // Get user
+  getUser() {
+    let userStr = localStorage.getItem('user');
+    if (userStr != null) return JSON.parse(userStr);
+    else {
+      return null;
+    }
+  }
+
+  // Get user role
+  getUserRole() {
+    let user = this.getUser();
+    return user?.authorities[0]?.authority;
+  }
 }

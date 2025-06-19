@@ -51,7 +51,7 @@ export class SignupComponent implements OnInit {
     (error)=>{
       console.log(error);
       // alert('something went wrong');
-      this.snackBar.open('Something went wrong !!', 'Ok', {
+      this.snackBar.open('User name already exists !! with this username' + this.user.username, 'Ok', {
         duration: 3000,
         verticalPosition: 'top',
         horizontalPosition: 'right'
