@@ -14,18 +14,31 @@ export class NavbarComponent implements OnInit {
   user: any = null;
 
   constructor(public login: LoginService, private router: Router) {}
-
-  ngOnInit(): void {
-    // Initial check
-    this.isLoggedIn = this.login.isLogin();
-    this.user = this.login.getUser();
-
-    // Listen for login/logout changes
-    this.login.loginStatusSubject.asObservable().subscribe((status) => {
-      this.isLoggedIn = status;
-      this.user = this.login.getUser();
-    });
+ngOnInit(): void {
+  if (this.login.isLogin()) {
+    this.login.getCurrentUser().subscribe(
+      (user) => {
+        this.user = user;
+        this.isLoggedIn = true;
+        this.login.setUser(user);
+        this.login.loginStatusSubject.next(true);
+      },
+      (error) => {
+        console.log('Token is invalid or expired');
+        this.logout(); // clear storage and update UI
+      }
+    );
+  } else {
+    this.isLoggedIn = false;
+    this.user = null;
   }
+
+  this.login.loginStatusSubject.asObservable().subscribe((status) => {
+    this.isLoggedIn = status;
+    this.user = this.login.getUser();
+  });
+}
+
 
   public logout() {
     this.login.logout();
