@@ -1,0 +1,57 @@
+/* Main card styling */
+.categories-card {
+    padding: 24px;
+    margin: 16px;
+    border-radius: 8px;
+}
+
+/* Header styling */
+.categories-header {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 16px 0;
+    margin-bottom: 8px;
+}
+
+/* Category item styling */
+.category-item {
+    height: auto !important;
+    padding: 12px 0;
+    align-items: center;
+}
+
+.category-icon {
+    margin-right: 16px;
+    color: #3f51b5;
+}
+
+.category-content {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.category-title {
+    font-weight: 500;
+    margin-right: 4px;
+}
+
+.category-description {
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* Divider styling */
+.mat-divider {
+    margin: 12px 0;
+}
+
+/* Add button styling */
+.add-category-container {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.add-category-btn {
+    padding: 8px 32px;
+}
