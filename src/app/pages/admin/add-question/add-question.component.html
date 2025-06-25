@@ -1,0 +1,81 @@
+<mat-card class="bootsrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Add New Question to {{qTitle}}</h1>
+
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-subtitle>
+                        Enter Question Details
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <form> <mat-form-field appearance="outline" class="w100 mt20">
+                            <mat-label>Enter Question Content</mat-label>
+                            <textarea matInput placeholder="Enter Question Content" [(ngModel)]="question.content"
+                                name="content" rows="3"></textarea>
+                        </mat-form-field>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field appearance="outline" class="w100">
+                                    <mat-label>Enter Option 1</mat-label>
+                                    <input matInput placeholder="Enter Option 1" [(ngModel)]="question.option1"
+                                        name="option1">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field appearance="outline" class="w100">
+                                    <mat-label>Enter Option 2</mat-label>
+                                    <input matInput placeholder="Enter Option 2" [(ngModel)]="question.option2"
+                                        name="option2">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field appearance="outline" class="w100">
+                                    <mat-label>Enter Option 3</mat-label>
+                                    <input matInput placeholder="Enter Option 3" [(ngModel)]="question.option3"
+                                        name="option3">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field appearance="outline" class="w100">
+                                    <mat-label>Enter Option 4</mat-label>
+                                    <input matInput placeholder="Enter Option 4" [(ngModel)]="question.option4"
+                                        name="option4">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <mat-form-field appearance="outline" class="w100">
+                            <mat-label>Select Correct Answer</mat-label>
+                            <mat-select required [(ngModel)]="question.answer" name="answer">
+                                <mat-option [value]="question.option1">
+                                    {{ question.option1 }}
+                                </mat-option>
+                                <mat-option [value]="question.option2">
+                                    {{ question.option2 }}
+                                </mat-option>
+                                <mat-option [value]="question.option3">
+                                    {{ question.option3 }}
+                                </mat-option>
+                                <mat-option [value]="question.option4">
+                                    {{ question.option4 }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary">Add</button>
+                            <button type="reset" style="margin-left: 20px;" mat-raised-button
+                                color="accent">Reset</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</mat-card>
