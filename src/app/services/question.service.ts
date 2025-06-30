@@ -16,8 +16,22 @@ export class QuestionService {
     return this._http.get(`${baseUrl}/question/quiz/all/${qid}`);
   }
 
+  public getQuestionsOfQuizForTest(qid:any){
+    return this._http.get(`${baseUrl}/question/quiz/${qid}`);
+  }
+
   //add question
   public addQuestion(question:any){
     return this._http.post(`${baseUrl}/question/`,question);
+  }
+
+  //delete question
+  public deleteQuestion(quesId:any){
+    return this._http.delete(`${baseUrl}/question/${quesId}`);
+  }
+
+  //update question
+  public updateQuestion(question:any){
+    return this._http.put(`${baseUrl}/question/`,question);
   }
 }
