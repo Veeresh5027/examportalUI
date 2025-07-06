@@ -37,6 +37,10 @@
                         <p class="mt20"><b>Answer:</b> {{q.answer}}</p>
                         </div>
                 </mat-card-content>
+               <mat-card-actions>
+                 <button mat-raised-button  color="primary">Update</button>
+                <button mat-raised-button  class="ml20" color="warn" (click)="deleteQuestion(q.quesId, i)">Remove</button>
+               </mat-card-actions>
             </mat-card>
         </div>
     </div>
