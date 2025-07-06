@@ -3,6 +3,7 @@ import { CategoryService } from '../../../services/category.service';
 import Swal from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuizService } from '../../../services/quiz.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-quiz',
@@ -25,7 +26,7 @@ export class AddQuizComponent implements OnInit {
   }
  }
 
-  constructor(private _cat:CategoryService, private _snack:MatSnackBar, private _quiz:QuizService) { }
+  constructor(private _cat:CategoryService, private _snack:MatSnackBar, private _quiz:QuizService, private _router:Router) { }
   ngOnInit(): void {
     this._cat.getCategories().subscribe(  (data:any)=>{
       this.categories = data;
@@ -60,6 +61,7 @@ export class AddQuizComponent implements OnInit {
             }
            }
         });
+        this._router.navigate(['/admin/quizzes']);  
       },
       (error) => {
         console.log(error);

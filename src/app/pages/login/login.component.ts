@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
           if (role === 'ADMIN') {
             this.router.navigate(['admin']);
           } else if (role === 'NORMAL') {
-            this.router.navigate(['user-dashboard']);
+            this.router.navigate(['user-dashboard/0']);
           } else {
             this.login.logout();
           }
