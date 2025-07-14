@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-action-list>
+    <div mat-subheader>Available Categories</div>
+
+    <button mat-list-item class="custom-list-item" [routerLink]="['/user-dashboard/0']">
+        <mat-icon>list</mat-icon>
+        <span>All Quiz</span>
+    </button>
+    <a mat-list-item class="custom-list-item" [routerLink]="['/user-dashboard/'+ c.cid]" *ngFor="let c of categories">
+      <mat-icon>list</mat-icon>
+      <span>{{c.title}}</span>
+    </a>
+    
+    </mat-action-list>  
+</mat-card>
+<!-- {{categories | json}} -->
