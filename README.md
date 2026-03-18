@@ -28,3 +28,23 @@
 * **API Client:** HttpClient for seamless communication with the Spring Boot server.
 
 ---
+
+## 📂 Project Architecture
+
+The project follows a clean, modular structure for better maintainability:
+
+```text
+src/app/
+├── components/         # Reusable UI elements (Navbar, Footer, etc.)
+├── pages/              # Core View Modules
+│   ├── admin/          # Admin Dashboard & Quiz Management
+│   ├── home/           # Landing page logic
+│   ├── login/          # Secure Authentication
+│   ├── profile/        # User profile & statistics
+│   ├── signup/         # New user onboarding
+│   └── user/           # Student Dashboard & Exam interface
+├── services/           # API Integration layer (QuizService, UserService, etc.)
+├── admin.guard.ts      # Route protection for Admin users
+├── normal.guard.ts     # Route protection for Students
+└── auth.interceptor.ts # Global JWT injection logic
+```
