@@ -19,4 +19,12 @@
 
 ---
 
+## 🛠️ Technical Stack
 
+* **Framework:** Angular 17+
+* **Language:** TypeScript
+* **State & Security:** JWT-based authentication with Angular Interceptors.
+* **Styling:** Material Design / Bootstrap for a modern, responsive feel.
+* **API Client:** HttpClient for seamless communication with the Spring Boot server.
+
+---
