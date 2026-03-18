@@ -8,4 +8,15 @@
 
 ---
 
+## 🚀 Key Features
+
+* **Role-Based Access Control:** Secure routing using `AdminGuard` and `NormalGuard` to separate Admin and User dashboards.
+* **Secure API Communication:** Implemented `AuthInterceptor` to automatically attach JWT tokens to every outgoing HTTP request.
+* **Comprehensive Admin Dashboard:** Full CRUD operations for Categories, Quizzes, and Questions.
+* **Interactive Student Interface:** Responsive quiz-taking environment with timer logic and automated result processing.
+* **Real-time Validation:** Advanced form handling for Login, Signup, and Profile management.
+* **Modular Service Architecture:** Decoupled business logic using dedicated services for Categories, Quizzes, and Users.
+
+---
+
 
