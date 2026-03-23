@@ -50,3 +50,10 @@ src/app/
 ```
 
 ---
+
+⚙️ Setup & Installation
+# 1. Prerequisites
+ * **Node.js (LTS version)**
+Angular CLI (npm install -g @angular/cli)
+
+---
