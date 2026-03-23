@@ -81,8 +81,6 @@ src/app/
 
 ---
 
-
-
-
-
-  
+## 👨‍💻 Author
+### Veeresh Pattar
+GitHub: Veeresh5027
