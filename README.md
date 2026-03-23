@@ -57,18 +57,32 @@ src/app/
 
 * **Angular CLI (npm install -g @angular/cli)**
   
-2. Installation
+# 2. Installation
 
     ```bash
     git clone [https://github.com/Veeresh5027/examportalUI.git](https://github.com/Veeresh5027/examportalUI.git)
  
-   cd examportalUI
+     cd examportalUI
 
     npm install
 
+    ```
+    
+
+# 3. Connection to Backend
+   
+* **Ensure the Exam Portal Server is running on http://localhost:8080.**
+
+# 4. Run the Application
+
+```text
+    ng serve
 ```
 
 ---
+
+
+
 
 
   
