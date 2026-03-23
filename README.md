@@ -59,10 +59,16 @@ src/app/
   
 2. Installation
 
-    ```text
+    ```bash
     git clone [https://github.com/Veeresh5027/examportalUI.git](https://github.com/Veeresh5027/examportalUI.git)
- cd examportalUI
-npm install
-```
-   
+ 
+   cd examportalUI
 
+    npm install
+
+```
+
+---
+
+
+  
