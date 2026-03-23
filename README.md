@@ -51,9 +51,18 @@ src/app/
 
 ---
 
-⚙️ Setup & Installation
+## ⚙️ Setup & Installation
 # 1. Prerequisites
  * **Node.js (LTS version)**
-Angular CLI (npm install -g @angular/cli)
 
----
+* **Angular CLI (npm install -g @angular/cli)**
+  
+2. Installation
+
+    ```text
+    git clone [https://github.com/Veeresh5027/examportalUI.git](https://github.com/Veeresh5027/examportalUI.git)
+ cd examportalUI
+npm install
+```
+   
+
